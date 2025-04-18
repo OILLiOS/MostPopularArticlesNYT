@@ -13,6 +13,7 @@ protocol ApiPathProtocol{
     var apiKey: String { get }
     var endPoint: String { get }
     var urlRequest: URLRequest? { get }
+    var localKey: String { get }
 }
 
 extension ApiPathProtocol{
@@ -34,11 +35,11 @@ extension MostPopularArticlesPahts: ApiPathProtocol{
     var endPoint: String {
         switch self {
         case .view(let period):
-            return "view/\(period)"
+            return "viewed/\(period)"
         case .mailed(let period):
-            return "mailed/\(period)"
-        case .shared(let period, let share_type):
-            return "shared/\(period)/\(share_type)"
+            return "emailed/\(period)"
+        case .shared(let share_type, let period):
+            return "shared/\(share_type)/\(period)"
         }
     }
     
@@ -46,5 +47,16 @@ extension MostPopularArticlesPahts: ApiPathProtocol{
         let urlString = self.pathBase + self.endPoint + ".json" + self.apiKey
         guard let url = URL(string: urlString) else { return nil }
         return URLRequest(url: url)
+    }
+    
+    var localKey: String {
+        switch self {
+        case .view( _):
+            return "view"
+        case .mailed( _):
+            return "mailed"
+        case .shared( _, _):
+            return "shared"
+        }
     }
 }

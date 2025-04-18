@@ -14,6 +14,7 @@ public enum ApiError: Error {
     case invalidURL
     case noInternetConnection
     case malFormattedJSON
+    case dontHaveResults
     /**
      Descripcion del error del Api Movie DB
      - Returns: Regresa un 'String' con la descripcion del error provocado
@@ -28,6 +29,8 @@ public enum ApiError: Error {
             return "Sin Conexion a Internet"
         case .malFormattedJSON:
             return  "JSON con formato incorrecto"
+        case .dontHaveResults:
+            return  "No se pudieron obtener resultados"
         }
     }
 }

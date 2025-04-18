@@ -29,12 +29,12 @@ final class MainTabBarController: UITabBarController {
     ///    - controller: Enum TabViewControllers que contine la estructura de un tabBarITem
     /// - returns:
     ///   Devuelve un TabViewControllers
-    private func createBarController(for controller: MTBArticlesCategory) -> UIViewController{
-        let viewController = MostPopularViewedRouter.createModule()
+    private func createBarController(for category: MTBArticlesCategory) -> UIViewController{
+        let viewController = MostPopularViewedRouter.createModule(type: category)
         let navBarController = UINavigationController(rootViewController: viewController)
-        navBarController.tabBarItem.title = controller.title
-        navBarController.tabBarItem.image = controller.image
-        viewController.navigationItem.title = controller.title
+        navBarController.tabBarItem.title = category.title
+        navBarController.tabBarItem.image = category.image
+        viewController.navigationItem.title = category.title
         return navBarController
     }
 }

@@ -13,21 +13,38 @@ import Foundation
 ///   Devuelve un Result con <Modelo, error>
 ///
 final class NYTApiMostPopularArticles: GenericAPIProtocol {
-    var apiError: ApiError = .defaultError
-    var handlerBack: (([Article]?, Error?) -> Void)?
+    var apiError: ApiError? = .defaultError
+
     
-    func getArticles(path: MostPopularArticlesPahts){
-        fetch(ApiURLRequest: path.urlRequest, completionHandler: handlerGetArticlesResult(result:))
-    }
-    
-    func handlerGetArticlesResult(result: Result<ArticlesResponse?, Error>) {
-        switch result {
-        case .failure(let fail):
-            self.handlerBack?(nil, fail)
-        case .success(let response):
-            self.handlerBack?(response?.results, nil)
+    func getArticles(path: MostPopularArticlesPahts, handlerback: @escaping (([Article]?, Error?) -> Void)){
+        let networkManager = NetworkConnectionManager.sharedInstance
+        if networkManager.phoneHaveConnection(){
+            fetch(ApiURLRequest: path.urlRequest, completionHandler: { [weak self] (result: Result<ArticlesResponse?, Error>) in
+                switch result {
+                case .failure(let fail):
+                    self?.apiError = fail as? ApiError
+                    handlerback(nil, self?.apiError)
+                case .success(let response):
+                    if let articles = response?.results{
+                        UserDefaultManager().saveArticles(type: path.localKey, article: articles)
+                        handlerback(response?.results, nil)
+                    }else{
+                        self?.apiError = .dontHaveResults
+                        handlerback(nil, self?.apiError)
+                    }
+                }
+            })
+        }else{
+            self.apiError = .noInternetConnection
+            if let localArticles = UserDefaultManager().getArticles(type: path.localKey){
+                handlerback(localArticles, self.apiError)
+            }else{
+                handlerback(nil, self.apiError)
+            }
         }
     }
+    
+
 
 }
 

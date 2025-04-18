@@ -9,7 +9,7 @@ import Foundation
 
 ///Protocolo para implementar una llamada al Api NYT
 protocol GenericAPIProtocol {
-    var apiError: ApiError { get }
+    var apiError: ApiError? { get }
     func fetch<T: Decodable>(ApiURLRequest: URLRequest?, completionHandler: @escaping (Result<T?, Error>) -> Void)
     func decode<T: Decodable>(data: Data?, decoder: JSONDecoder) -> T?
 }

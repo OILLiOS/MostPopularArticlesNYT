@@ -12,12 +12,12 @@ import UIKit
 class MostPopularViewedRouter: PresenterToRouterMostPopularViewedProtocol {
     
     // MARK: Static methods
-    static func createModule() -> UIViewController {
+    static func createModule(type: MTBArticlesCategory) -> UIViewController {
         
         let viewController = MostPopularViewedViewController()
-        
-        let presenter: ViewToPresenterMostPopularViewedProtocol & InteractorToPresenterMostPopularViewedProtocol = MostPopularViewedPresenter()
-        
+                
+        lazy var presenter: ViewToPresenterMostPopularViewedProtocol & InteractorToPresenterMostPopularViewedProtocol = MostPopularViewedPresenter()
+        presenter.mostPopularType = type
         viewController.presenter = presenter
         viewController.presenter?.router = MostPopularViewedRouter()
         viewController.presenter?.view = viewController
@@ -25,6 +25,14 @@ class MostPopularViewedRouter: PresenterToRouterMostPopularViewedProtocol {
         viewController.presenter?.interactor?.presenter = presenter
         
         return viewController
+    }
+    
+    func goToDetail(view: PresenterToViewMostPopularViewedProtocol, article: String) {
+        if let viewController = view as? UIViewController {
+            let detailViewController = ArticleDetailRouter.createModule(url: article)
+            viewController.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+        
     }
     
 }
