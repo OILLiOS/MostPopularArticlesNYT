@@ -8,7 +8,7 @@ Su objetivo es consumir la API de los artículos más populares del The New York
 🚀 Características
 	•	Consulta de los artículos más populares del NYTimes (más vistos, compartidos o enviados).
 	•	Visualización en lista con título, resumen, autor e imagen destacada.
-	•	Vista detallada con información completa del artículo.
+	•	Vista detallada con información completa del artículo.a
 	•	Manejador de errores para respuestas inválidas o fallas de red.
 
 ⸻
