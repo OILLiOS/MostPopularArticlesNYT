@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MostPopularViewedViewController" customModule="MostPopularArticlesNYT" customModuleProvider="target">
             <connections>
+                <outlet property="loading" destination="BMU-4G-ykj" id="AmF-2Q-9fc"/>
                 <outlet property="tblArticles" destination="7WR-rw-kmj" id="C25-2B-hON"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,11 +24,20 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BMU-4G-ykj">
+                    <rect key="frame" x="171.66666666666666" y="401" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="XrE-3i-UQX"/>
+                        <constraint firstAttribute="width" constant="50" id="ajn-tT-9K0"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7WR-rw-kmj" secondAttribute="trailing" id="CFP-aj-aDZ"/>
+                <constraint firstItem="BMU-4G-ykj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="G9y-RZ-1VP"/>
+                <constraint firstItem="BMU-4G-ykj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="POA-Ev-4I6"/>
                 <constraint firstItem="7WR-rw-kmj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nVl-rQ-wxF"/>
                 <constraint firstAttribute="bottom" secondItem="7WR-rw-kmj" secondAttribute="bottom" id="qrL-2a-MRz"/>
                 <constraint firstItem="7WR-rw-kmj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="u18-8u-huQ"/>

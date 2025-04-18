@@ -9,6 +9,7 @@ import UIKit
 
 class MostPopularViewedViewController: UIViewController {
     @IBOutlet weak var tblArticles: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     var articles: [Article] = []
     // MARK: - Properties
     var presenter: ViewToPresenterMostPopularViewedProtocol?
@@ -38,6 +39,7 @@ extension MostPopularViewedViewController: PresenterToViewMostPopularViewedProto
     // TODO: Implement View Output Methods
     func setArticlesInView(_ articles: [Article]) {
         self.articles = articles
+        self.loading.stopAnimating()
         self.tblArticles.reloadData()
     }
     
