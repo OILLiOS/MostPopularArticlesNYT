@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "973B217A-DA18-415C-A7D0-2F89EDD3700E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MostPopularArticlesNYT.xcodeproj",
+        "identifier" : "4CD4CFE92DB1FF1D007CDB7C",
+        "name" : "MostPopularArticlesNYTTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -16,7 +16,7 @@ public enum ApiError: Error {
     case malFormattedJSON
     case dontHaveResults
     /**
-     Descripcion del error del Api Movie DB
+     Descripcion del error del Api NYT
      - Returns: Regresa un 'String' con la descripcion del error provocado
      */
     var localizedDescription: String {

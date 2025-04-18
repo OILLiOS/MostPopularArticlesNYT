@@ -14,6 +14,12 @@ protocol RemoteLoadImageProtocol {
 }
 
 final class ImageRemoteLoader: RemoteLoadImageProtocol{
+    private let session: URLSession
+    
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
+    
     /**
         Funcion que obtiene una imagen del servidor y regresa un`UIImage`
       - Parameters:
@@ -23,18 +29,18 @@ final class ImageRemoteLoader: RemoteLoadImageProtocol{
     */
     func loadFrom(url: URL, completion: @escaping (UIImage?) -> ()) {
         DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
+            let task = self.session.dataTask(with: url) { data, response, error in
                 DispatchQueue.main.async {
-                    completion(UIImage(data: data))
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(nil)
+                    if let data = data, let image = UIImage(data: data) {
+                        completion(image)
+                    } else {
+                        completion(nil)
+                    }
                 }
             }
+            task.resume()
         }
     }
-    
 }
 
 // Extension de UIImageView para cargar una imagen del servidor

@@ -19,6 +19,7 @@ class NetworkConnectionManager {
     var reachabilityStatus: Reachability.Connection = .unavailable
     let reachability = try! Reachability()
     var haveConnection : Bool = false
+    var isMonitoring: Bool = false
     
     // MARK: Initializers
     init() { }
@@ -28,9 +29,15 @@ class NetworkConnectionManager {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
             try reachability.startNotifier()
+            isMonitoring = true
         } catch(let error) {
                 print("No se pudo inicializar el observador \(error.localizedDescription)")
         }
+    }
+    
+    func stopObserveConnection() {
+        reachability.stopNotifier()
+        isMonitoring = false
     }
 
     @objc func reachabilityChanged(note: Notification) {

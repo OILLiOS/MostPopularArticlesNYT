@@ -13,12 +13,15 @@ class ArticleCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblAbstract: UILabel!
     @IBOutlet weak var imgThumbnail: UIImageView!
+    @IBOutlet weak var lblAuthor: UILabel!
     
     func loadData(article: Article){
         lblSource.text = "\(article.source ?? "")"
         lblPublishingDate.text = " \(article.publishedDate)    "
         lblTitle.text = article.title
         lblAbstract.text = article.abstract
+        lblAuthor.text = "\(article.byline)"
+        
         if let media = article.media.first,
             let mediaURL = getURLThumbnail(articleMedia: media) {
             imgThumbnail.loadRemoteImage(url: mediaURL)

@@ -6,9 +6,9 @@
 //
 
 import Foundation
-///Clase que implementa el protocolo GenericApi para obtener Peliculas de la  Api MovieDB
+///Clase que implementa el protocolo GenericApi para obtener Articulos Populares de la  Api NYT
 /// - parameters:
-///    - movieURLRequest: Request  a consumir
+///    - path: URL  a consumir
 /// - returns:
 ///   Devuelve un Result con <Modelo, error>
 ///
