@@ -1,6 +1,6 @@
 📰 NYTimes Popular Articles App
 
-Esta es una aplicación iOS desarrollada como parte de un proceso de contratación por parta de Reven.inc.
+Esta es una aplicación iOS desarrollada como parte de un proceso de contratación para Reven.inc.
 Su objetivo es consumir la API de los artículos más populares del The New York Times, mostrando la información de manera clara, eficiente y siguiendo buenas prácticas de arquitectura y pruebas.
 
 ⸻
