@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArticleDetailPresenter: ViewToPresenterArticleDetailProtocol {
+final class ArticleDetailPresenter: ViewToPresenterArticleDetailProtocol {
 
     // MARK: Properties
     var view: PresenterToViewArticleDetailProtocol?

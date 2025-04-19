@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MostPopularViewedInteractor: PresenterToInteractorMostPopularViewedProtocol {
+final class MostPopularViewedInteractor: PresenterToInteractorMostPopularViewedProtocol {
 
     // MARK: Properties
     var presenter: InteractorToPresenterMostPopularViewedProtocol?

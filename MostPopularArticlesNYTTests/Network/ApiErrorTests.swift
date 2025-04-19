@@ -9,7 +9,7 @@
 import XCTest
 @testable import MostPopularArticlesNYT
 
-class ApiErrorTests: XCTestCase {
+final class ApiErrorTests: XCTestCase {
     
     func testApiError_DefaultError() {
         // Given

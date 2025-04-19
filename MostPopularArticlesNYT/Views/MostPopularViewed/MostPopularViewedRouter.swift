@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MostPopularViewedRouter: PresenterToRouterMostPopularViewedProtocol {
+final class MostPopularViewedRouter: PresenterToRouterMostPopularViewedProtocol {
     
     // MARK: Static methods
     static func createModule(type: MTBArticlesCategory) -> UIViewController {

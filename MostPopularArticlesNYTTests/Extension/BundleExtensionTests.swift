@@ -8,7 +8,7 @@
 import XCTest
 @testable import MostPopularArticlesNYT
 
-class BundleExtensionTests: XCTestCase {
+final class BundleExtensionTests: XCTestCase {
     
     func testApplicationName_WithDisplayName() {
         // Given

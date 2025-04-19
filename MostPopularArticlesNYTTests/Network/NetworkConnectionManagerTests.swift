@@ -9,7 +9,7 @@
 import XCTest
 @testable import MostPopularArticlesNYT
 
-class NetworkConnectionManagerTests: XCTestCase {
+final class NetworkConnectionManagerTests: XCTestCase {
     
     var sut: NetworkConnectionManager!
     

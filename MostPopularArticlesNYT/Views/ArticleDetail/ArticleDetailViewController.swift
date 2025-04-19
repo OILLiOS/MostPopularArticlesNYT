@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class ArticleDetailViewController: UIViewController {
+final class ArticleDetailViewController: UIViewController {
     @IBOutlet weak var wvArticle: WKWebView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     

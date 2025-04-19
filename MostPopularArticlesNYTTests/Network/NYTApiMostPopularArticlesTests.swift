@@ -10,7 +10,7 @@ import XCTest
 @testable import MostPopularArticlesNYT
 
 
-class NYTApiMostPopularArticlesTests: XCTestCase {
+final class NYTApiMostPopularArticlesTests: XCTestCase {
     
     var sut: MockNYTApi!
     var mockNetworkManager: MockNetworkConnectionManager!

@@ -9,7 +9,7 @@
 import XCTest
 @testable import MostPopularArticlesNYT
 
-class UserDefaultManagerTests: XCTestCase {
+final class UserDefaultManagerTests: XCTestCase {
     
     var sut: UserDefaultManager!
     var mockUserDefaults: MockUserDefaults!

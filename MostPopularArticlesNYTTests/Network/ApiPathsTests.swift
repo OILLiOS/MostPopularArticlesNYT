@@ -9,7 +9,7 @@
 import XCTest
 @testable import MostPopularArticlesNYT
 
-class ApiPathsTests: XCTestCase {
+final class ApiPathsTests: XCTestCase {
     
     func testMostPopularArticlesPahts_MostViewed() {
         // Given

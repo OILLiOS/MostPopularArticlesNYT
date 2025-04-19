@@ -8,7 +8,7 @@
 import XCTest
 @testable import MostPopularArticlesNYT
 
-class ImageRemoteLoaderTests: XCTestCase {
+final class ImageRemoteLoaderTests: XCTestCase {
     
     var sut: ImageRemoteLoader!
     var mockURLSession: MockURLSession!

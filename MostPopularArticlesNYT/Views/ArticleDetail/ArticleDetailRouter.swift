@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ArticleDetailRouter: PresenterToRouterArticleDetailProtocol {
+final class ArticleDetailRouter: PresenterToRouterArticleDetailProtocol {
     
     // MARK: Static methods
     static func createModule(url: String) -> UIViewController {

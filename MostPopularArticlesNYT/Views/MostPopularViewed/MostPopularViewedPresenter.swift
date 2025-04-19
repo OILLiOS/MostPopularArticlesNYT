@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MostPopularViewedPresenter: ViewToPresenterMostPopularViewedProtocol {
+final class MostPopularViewedPresenter: ViewToPresenterMostPopularViewedProtocol {
 
     // MARK: Properties
     var view: PresenterToViewMostPopularViewedProtocol?
