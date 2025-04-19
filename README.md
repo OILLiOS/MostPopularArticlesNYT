@@ -47,9 +47,11 @@ open NYTimesPopularArticles.xcodeproj
 ✨ Estructura del proyecto
 	•	Views/: Cada módulo de vista estructurado según VIPER (View, Interactor, Presenter, Entity, Router).
   •	Common/: Helpers de la aplicaiòn.
+	•	Common/Dependencies/: Se agrega como dependecia la clase Reachability para la gestiòn de la conexion.
 	•	Common/Network/: Capa de servicios para consumir la API del NYT.
 	•	Tests/: Pruebas unitarias organizadas por módulo.
 
+*Nota importante: La unica clase agegada como dependencia es Reachability para la gestión de la conexion.
 ⸻
 
 📄 Licencia
